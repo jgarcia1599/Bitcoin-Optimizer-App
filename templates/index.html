@@ -15,19 +15,30 @@
 
 
     <!-- myscripts -->
-    <script type="text/javascript" src="../static/scipt.js"></script>
+    <!-- <script type="text/javascript" src="../static/scipt.js"></script> -->
 
     <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
 <body>
+    <div class="jumbotron jumbotron-fluid text-center">
         <div class="container">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h1 class="panel-title">Hiii</h1>
-            </div>
+          <h2 class="display-4">Bitcoin Optimizer</h2>
+          <p class="lead">Make data-driven decisions on bitcoin investment!</p>
         </div>
+    </div>
         <h1 id="fadein" style="display:none;">{{message}}</h1>
+    
+    <form action="/search">
+        How much do you want to invest (U.S. dollars)?
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input type="number" class="form-control" name="useramount">
+        </div>
+    </form>
+    
 </body>
 
 </html>
