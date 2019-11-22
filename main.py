@@ -18,3 +18,5 @@ def hello_visitor():
 
 
 app.run(host='0.0.0.0',port=5000,debug=True)
+
+# More on flask: http://exploreflask.com/en/latest/
