@@ -4,43 +4,45 @@
 <html>
 <head>
     <title>Bitcoin Recommendation Tool</title>
+    <style type="text/css">
+        #mycenter{
+            position: absolute;
+            text-align:center;
+            width:100%;
+            line-height:0.4em;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+    </style>
 
 
 
     <!-- dependencies -->
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href="{{url_for('static', filename='style.css')}}">
 
-
-    <!-- myscripts -->
-    <!-- <script type="text/javascript" src="../static/scipt.js"></script> -->
-
-    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid text-center">
-        <div class="container">
-          <h2 class="display-4">Bitcoin Optimizer</h2>
-          <p class="lead">Make data-driven decisions on bitcoin investment!</p>
-        </div>
-    </div>
-        <h1 id="fadein" style="display:none;">{{message}}</h1>
-    
-    <form action="/search">
-        How much do you want to invest (U.S. dollars)?
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">$</span>
-            </div>
-            <input type="number" class="form-control" name="useramount">
+    <div id="particles-js">
+        <div id="mycenter">
+            <br>
+            <h1>Bitcoin Optimizer</h1>
+            <p>Make data-driven decisions on bitcoin investment!</p>
+            </form>
         </div>
 
-        Rate your level of risk from 1 to 10.<br>
-        <input type="range" min="0" max="100" />
-    </form>
+
+    </div>
+
+
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+    <script src="{{url_for('static', filename='particles.js')}}"></script>
+    <script src="{{url_for('static', filename='app.js')}}"></script>
     
 </body>
 
