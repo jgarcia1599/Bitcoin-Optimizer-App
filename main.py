@@ -124,6 +124,8 @@ def calculate():
     print('Total:  ', '$'+total_received)
     printresults = True
 
+    e_return_amount=(float(e_return)*user_funds)/100
+    risk_perc=str(float(risk_perc)/10)
     plt.xlabel('Risk')
     plt.ylabel('Expected Return')
     plt.title('Mean-Standard Deviation Frontier')
@@ -136,7 +138,7 @@ def calculate():
     plt.savefig(filename)
     # plt.show()  
     
-    return render_template("result.html",risk_perc=risk_perc,risk_amount=risk_amount,e_return=e_return,bonds=bonds,btc=btc,snp500=snp500,total_received=total_received,printresults=printresults,url=filename)
+    return render_template("result.html",risk_perc=risk_perc,risk_amount=risk_amount,e_return=e_return,bonds=bonds,btc=btc,snp500=snp500,total_received=total_received,printresults=printresults,url=filename,e_return_amount=e_return_amount)
 app.run(host='0.0.0.0',port=8000,debug=True)
 
 # More on flask: http://exploreflask.com/en/latest/
