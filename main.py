@@ -35,7 +35,7 @@ def calculate():
     register_matplotlib_converters()
 
     myapikey = 'd259c24ace80ac05a14202761b532b6c3f6154399d23480213b20fce538dbc95'
-    headers = {'authorization':f'Apikey {myapikey}'}
+    headers = {'authorization':'Apikey {myapikey}'}
     params = {'fsym':'BTC','tsym':'USD','allData':'false','limit':'365'}
     resp = requests.get("https://min-api.cryptocompare.com/data/histoday",params = params,headers = headers)
     resp = resp.json()
@@ -138,9 +138,11 @@ def calculate():
     plt.savefig(filename)
     # plt.show()  
     
-    return render_template("result.html",risk_perc=risk_perc,risk_amount=risk_amount,e_return=e_return,bonds=bonds,btc=btc,snp500=snp500,total_received=total_received,printresults=printresults,url=filename,e_return_amount=e_return_amount)
 
+    return render_template("result.html",risk_perc=risk_perc,risk_amount=risk_amount,e_return=e_return,bonds=bonds,btc=btc,snp500=snp500,total_received=total_received,printresults=printresults,url=filename)
+  
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
+
 
 # More on flask: http://exploreflask.com/en/latest/
