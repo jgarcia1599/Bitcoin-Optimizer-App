@@ -141,6 +141,6 @@ def calculate():
     return render_template("result.html",risk_perc=risk_perc,risk_amount=risk_amount,e_return=e_return,bonds=bonds,btc=btc,snp500=snp500,total_received=total_received,printresults=printresults,url=filename,e_return_amount=e_return_amount)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
 
 # More on flask: http://exploreflask.com/en/latest/
