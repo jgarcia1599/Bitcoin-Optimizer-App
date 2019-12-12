@@ -12,6 +12,7 @@
         .floater{
             font-family: 'Rajdhani', sans-serif;
             font-size:50px;
+            text-align:center;
         }
         .description{
             font-family: 'Rajdhani', sans-serif;
@@ -21,6 +22,12 @@
         #form{
             margin:30px;
 
+        }
+        #position{
+            top:80%;
+        }
+        #id{
+            text-align:center;
         }
 
 
@@ -34,27 +41,27 @@
     <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type= "text/css" href="{{url_for('static', filename='style.css')}}">
 
 </head>
 
 <body>
     <div id="particles-js">
-    <div class="floater">
-            <div class="container">
-                    <div class="row justify-content-md-center" style="color:#ff9900;">
-                        Bitcoin Optimizer
-                    </div>
-            </div>
+    <div class="floater" style="  position: absolute; color:#ff9900;" >
+        <div style="color:#ff9900; text-align:center; margin:30px;" id="centertitle">
+            Bitcoin Optimizer
+        </div>
     </div>
-    <div class="description">
+    <br>
+    <br>
+    <br>
+    <div class="description" style="  position: absolute;">
         <p>The rise of cryptocurrencies and their potential to skyrocket in value have made Bitocin a popular asset for risk-tolerant speculators. This raises the question whether Bitcoin has a place outside the crypto-craze? This web application showcases that exposure to Bitcoin can diversify a portfolio and protect an investor against idiosyncratic risks. Just give us an amount you want to invest, how risk averse you are (from a scale of 1 to 10), and we will take care of the calculations so you can become a <b>Bitcoin Optimizer</b>.</p>
         <p>We take advantage of Modern Portfolio Theory in order to deliver the bet possible results .In doing so, we maximize the Sharpe ratio (risk-to-reward ratio) by taking its derivative with respect to the weight of one of the assets your portfolio is comprised of.</p>
         <p>In this beta version, your portfolio will be comprised of Bitcion, S&P 500 ETF (exchange traded fund), and US treasuries. In future versions, we hope our users can personalize the assets that comprise their portfolio.</p>
         <p>To deliver the most up to date stock market data, we rely on a third party API (Aplication Programming Interface), namely <a href="https://www.cryptocompare.com/">Crypto Compare</a> and the Python Module <a href="https://pypi.org/project/finviz/">Finviz</a>,  which gives us per request the financial data that we need in order to make sure the results we provide to our users are up to date. Enjoy!</p>
         <p style="color:#ff9900; font-size:30px;">Please provide below your risk aversion and how much you would like to invest</p>
     </div>
-    <div class="container">
+    <div class="container" id="position" style="  position: absolute;">
 
             
             <form id="form" method="POST">
@@ -145,6 +152,7 @@
 
             </form>
     </div>
+    </div>
 
 
 
@@ -159,9 +167,9 @@
 
 
 
-    <!-- <script src="{{url_for('static', filename='script.js')}}"></script>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
     <script src="{{url_for('static', filename='particles.js')}}"></script>
-    <script src="{{url_for('static', filename='app.js')}}"></script> -->
+    <script src="{{url_for('static', filename='app.js')}}"></script>
     
 </body>
 
