@@ -10,7 +10,7 @@ import pandas
 import json
 from pathlib import Path
 import matplotlib
-matplotlib.use("TkAgg")
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 import math
 from datetime import date, datetime, timedelta
@@ -124,6 +124,8 @@ def calculate():
     print('Total:  ', '$'+total_received)
     printresults = True
 
+    e_return_amount=(float(e_return)*user_funds)/100
+    risk_perc=str(float(risk_perc)/10)
     plt.xlabel('Risk')
     plt.ylabel('Expected Return')
     plt.title('Mean-Standard Deviation Frontier')
@@ -136,7 +138,11 @@ def calculate():
     plt.savefig(filename)
     # plt.show()  
     
+
     return render_template("result.html",risk_perc=risk_perc,risk_amount=risk_amount,e_return=e_return,bonds=bonds,btc=btc,snp500=snp500,total_received=total_received,printresults=printresults,url=filename)
-app.run(host='0.0.0.0',PORT=5400,debug=True)
+  
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
+
 
 # More on flask: http://exploreflask.com/en/latest/

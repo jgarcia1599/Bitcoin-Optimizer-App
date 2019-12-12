@@ -8,6 +8,7 @@ cssselect==1.1.0
 cycler==0.10.0
 finviz==1.2.3
 Flask==1.1.1
+gunicorn==20.0.4
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10.3
