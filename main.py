@@ -9,7 +9,9 @@ import matplotlib.pyplot as plt
 import pandas
 import json
 from pathlib import Path
-import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use("TkAgg")
+from matplotlib import pyplot as plt
 import math
 from datetime import date, datetime, timedelta
 from pandas.plotting import register_matplotlib_converters
@@ -121,8 +123,20 @@ def calculate():
     total_received=str(round((1 - CAL_x[user_risk-1]/mve_x)*user_funds + (CAL_x[user_risk-1]/mve_x)*w_1*user_funds + (CAL_x[user_risk-1]/mve_x)*w_2*user_funds,2))
     print('Total:  ', '$'+total_received)
     printresults = True
+
+    plt.xlabel('Risk')
+    plt.ylabel('Expected Return')
+    plt.title('Mean-Standard Deviation Frontier')
+
+    plt.plot(CAL_x, CAL_y, '-g', label = 'CAL')
+    plt.plot(mve_x, mve_y, 'yo', label = 'MVE')
+
+    plt.legend()
+    filename='static/graph.png'
+    plt.savefig(filename)
+    # plt.show()  
     
-    return render_template("result.html",risk_perc=risk_perc,risk_amount=risk_amount,e_return=e_return,bonds=bonds,btc=btc,snp500=snp500,total_received=total_received,printresults=printresults)
+    return render_template("result.html",risk_perc=risk_perc,risk_amount=risk_amount,e_return=e_return,bonds=bonds,btc=btc,snp500=snp500,total_received=total_received,printresults=printresults,url=filename)
 app.run(host='0.0.0.0',port=8000,debug=True)
 
 # More on flask: http://exploreflask.com/en/latest/
