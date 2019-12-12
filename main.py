@@ -10,7 +10,7 @@ import pandas
 import json
 from pathlib import Path
 import matplotlib
-matplotlib.use("TkAgg")
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 import math
 from datetime import date, datetime, timedelta
