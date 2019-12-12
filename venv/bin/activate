@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/juniorgarcia/Documents/final_project_ppds/Bitcoin-Optimizer-App/venv"
+VIRTUAL_ENV="/Users/denizgokten/Desktop/134/Bitcoin-Optimizer-App/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

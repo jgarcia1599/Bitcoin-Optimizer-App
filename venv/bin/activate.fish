@@ -57,7 +57,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/juniorgarcia/Documents/final_project_ppds/Bitcoin-Optimizer-App/venv"
+set -gx VIRTUAL_ENV "/Users/denizgokten/Desktop/134/Bitcoin-Optimizer-App/venv"
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | tr "." "\n")[1] -lt 3

@@ -10,13 +10,14 @@ import pandas
 import json
 from pathlib import Path
 import matplotlib
-matplotlib.use('Agg')
+matplotlib.use("Agg")
 from matplotlib import pyplot as plt
 import math
 from datetime import date, datetime, timedelta
 from pandas.plotting import register_matplotlib_converters
 import statistics
 import finviz
+
 
 app = Flask(__name__)
 
@@ -110,9 +111,10 @@ def calculate():
     user_funds = user_amount
     print('\nInitial Investment for Moderately Risk-Averse Investor')
     risk_perc=str(round(CAL_x[user_risk-1]*100,2))
-    risk_amount=str(round(CAL_x[user_risk-1]*100,2)*user_amount)
+    #risk_amount=str(round(CAL_x[user_risk-1],2)*user_amount)
     print('Risk:    ', risk_perc+'%','\t' + str(round((CAL_x[user_risk-1]-SPY_return)*100,2)*-1)+'% less risky the S&P 500')
     e_return=str(round(CAL_y[user_risk-1]*100,2))
+    risk_amount=str(round(CAL_y[user_risk-1]*user_amount,2))
     print('Return:  ', e_return+'%','\t' + str(round((CAL_y[user_risk-1]-SPY_return)*100,2))+'% higher return than the S&P 500')
     bonds=str(round((1 - CAL_x[user_risk-1]/mve_x)*user_funds,2)) 
     print('Bonds:  ', '$'+bonds)    # gives % of portfolio that should be invested in bonds, multiply with user input
@@ -124,8 +126,6 @@ def calculate():
     print('Total:  ', '$'+total_received)
     printresults = True
 
-    e_return_amount=(float(e_return)*user_funds)/100
-    risk_perc=str(float(risk_perc)/10)
     plt.xlabel('Risk')
     plt.ylabel('Expected Return')
     plt.title('Mean-Standard Deviation Frontier')
@@ -138,11 +138,10 @@ def calculate():
     plt.savefig(filename)
     # plt.show()  
     
-
     return render_template("result.html",risk_perc=risk_perc,risk_amount=risk_amount,e_return=e_return,bonds=bonds,btc=btc,snp500=snp500,total_received=total_received,printresults=printresults,url=filename)
-  
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+
+if __name__ == '__main__':  
+    app.run(host='0.0.0.0',port=5400,debug=True)
 
 
 # More on flask: http://exploreflask.com/en/latest/

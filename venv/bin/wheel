@@ -1,4 +1,4 @@
-#!/Users/juniorgarcia/Documents/final_project_ppds/Bitcoin-Optimizer-App/venv/bin/python3.7
+#!/Users/denizgokten/Desktop/134/Bitcoin-Optimizer-App/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
