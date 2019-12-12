@@ -22,6 +22,11 @@
             margin:30px;
 
         }
+        #results{
+            font-family: 'Rajdhani', sans-serif;
+            font-size:20px;
+
+        }
 
 
     </style>
@@ -145,6 +150,20 @@
 
             </form>
     </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div id="results">
+                    <h1>From this strategy, here are your results: </h1>
+                    <h3>Expected Returns: <b>${{risk_amount}}(%{{risk_perc}})</b></h3>
+                    <h3>You should invest <b>${{bonds}}</b> in Treasuries</h3>
+                    <h3>You should invest <b>${{btc}} </b>in Bitcoin </h3>
+                    <h3>You should invest <b>${{snp500}} </b>in S&P 500</h3>
+                    <p>A caveat: If you get a negative number for one of the assets, dont be scared! In fact, you are one step closer to becoming a <b>Bitcoin Optimizer</b>.This tells you to short the security, which in layman's terms means that you borrow bonds from a third party, sell them, and use the money to buy other stocks( or in this case, more bitcoin!)</p>
+            </div>
+
+        </div>
+
+    </div>
 
 
 
@@ -157,11 +176,10 @@
 
 
 
-
-
-    <!-- <script src="{{url_for('static', filename='script.js')}}"></script>
+</div>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
     <script src="{{url_for('static', filename='particles.js')}}"></script>
-    <script src="{{url_for('static', filename='app.js')}}"></script> -->
+    <script src="{{url_for('static', filename='app.js')}}"></script>
     
 </body>
 
