@@ -133,6 +133,8 @@ def calculate():
     plt.plot(CAL_x, CAL_y, '-g', label = 'CAL')
     plt.plot(mve_x, mve_y, 'yo', label = 'MVE')
 
+    plt.plot(CAL_x[user_risk], CAL_y[user_risk], 'ro', label = 'Your Portfolio')
+
     plt.legend()
     filename='static/graph.png'
     plt.savefig(filename)
