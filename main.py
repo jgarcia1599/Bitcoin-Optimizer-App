@@ -110,7 +110,7 @@ def calculate():
     user_risk = user_risk_input
     user_funds = user_amount
     print('\nInitial Investment for Moderately Risk-Averse Investor')
-    risk_perc=str(round(CAL_x[user_risk-1]*100,2))
+    risk_perc=str(round(CAL_y[user_risk-1]*100,2))
     #risk_amount=str(round(CAL_x[user_risk-1],2)*user_amount)
     print('Risk:    ', risk_perc+'%','\t' + str(round((CAL_x[user_risk-1]-SPY_return)*100,2)*-1)+'% less risky the S&P 500')
     e_return=str(round(CAL_y[user_risk-1]*100,2))
